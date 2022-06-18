@@ -1,4 +1,4 @@
-# stopwatch
+
 (function(){
     'use strict';
 

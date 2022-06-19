@@ -1,4 +1,3 @@
-
 (function(){
     'use strict';
 
@@ -76,26 +75,43 @@
     
    　 //startボタンにクリック時の動作
     　　start.addEventListener('click',function(){
-
+　　　　　　　
+　　　　　　　　　　　　　　　　　　//startボタンを2回押せないようにする　　
+         start.disabled=true;
+          
+          
         　//在時刻を示すDate.nowを代入
        　 startTime = Date.now();
 
         　//再帰的に使えるように関数を作る
        　 countUp();
+       　 
+       　 
+   　　　　　 
   　  });
 
+　　 
+　　       
+　　      
+　　     
    　 //stopボタンにクリック
     　stop.addEventListener('click',function(){
 
         　//タイマーを止めるにはclearTimeoutを使う。clearTimeoutの引数に渡すためのタイマーのidが必要
       　　 clearTimeout(timerId);
-
+      　　 
+　　　　
 
         　//タイマーに表示される時間elapsedTimeが現在時刻かたスタートボタンを押した時刻を引いたもの。
         　//タイマーを再開させたら0になってしまう。
        　 //それを回避するためには過去のスタート時間からストップ時間までの経過時間を足してあげなければならない。
       　　//Date.now()=ストップを押した時間、startTime=過去にスタートを押した値
       　　 timeToadd += Date.now() - startTime;
+      　　 
+      　　　　　// startボタン復活//
+      　　 start.disabled=false;
+      　　 
+      　　 
    　 });
 
    　 //resetボタンにクリック時

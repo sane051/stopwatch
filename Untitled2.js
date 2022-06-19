@@ -91,8 +91,8 @@
     timeToadd += Date.now() - startTime;
       　　 
    //start,resetボタン復活//
-   start.disabled=false;
-   reset.disabled=false;
+    start.disabled=false;
+    reset.disabled=false;
   });
 
   //resetボタンにクリック時
